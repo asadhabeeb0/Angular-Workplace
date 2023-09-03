@@ -1,0 +1,15 @@
+<h5>Child Component Data</h5>
+<div class="card">
+    <div class="card-header">
+        <ng-content select=".headingPart"></ng-content>
+    </div>
+    <div class="card-body">
+        <ng-content select=".bodyPart"></ng-content>
+    </div>
+</div>
+<br>
+
+<div>
+    <h4>Custom pipe is baked</h4>
+    {{ articles | customslice }}
+</div>

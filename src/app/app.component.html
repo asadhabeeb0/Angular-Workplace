@@ -1,0 +1,87 @@
+<span>{{ youknowmyname() }} My app is running!</span><br><br>
+
+<button class="btn btn-primary">Check Bootstrap</button><br><br>
+
+<input type="text" name="" [value]="checkproperty"> <br><br>
+<div [hidden]="isHidden">Property binding is Checked here</div><br><br>
+
+<button [disabled]="isHidden">Working</button><br>
+
+<button bind-disabled="isHidden">Yes</button><br><br>
+
+<button class="btn btn-primary" (click)="myfunctionforclick()" value="ValueForConnsole">Event Binding is Working on
+    button click</button><br><br>
+
+<input type="text" name="" [value]="texts"><br><br>
+
+<button class="btn btn-danger" [class.active]="isActive">Class Binding is learning Here</button><br><br>
+
+<button class="btn btn-primary" [class]="multiCssClasses">Css binding Here</button><br><br>
+
+<button class="btn btn-primary" [class.singleCssColorChange]="singleCssChange">Small Css of css binding</button><br><br>
+
+<button [style.color]="inlineColor">Inline Css, Style Binding</button><br><br><br>
+<button [style.fontWeight]="inlineFont ? 'bold' : 'normal'">Dom Property</button><br><br>
+
+<div class="container"><br>
+    <input [(ngModel)]="email" (click)=getEmail()>
+
+    <h2 class="text-danger">
+        My namer is {{biodata.name | lowercase}}. I was born in {{biodata.born | date}}.
+        I am {{biodata.age | number }} years old. I got {{biodata.boards | number:'3.2'}} percent in
+        12th class. My salary expectation is {{biodata.salary}}.
+    </h2>
+
+
+    <div [ngClass]="multiCssClasses">
+        Sorry for Delay...
+    </div><br><br>
+
+    <div [ngStyle]="{
+    'color': 'yellow',
+    'backgroundColor': 'gray'
+}">ngStyle is learning</div>
+    <div [ngStyle]="inlineCssStyle">
+        ngStyle is nicely insighted</div><br>
+
+    <div *ngIf="youtuberName === 'AsadHabeeb'; then mainpart else elsepart">ngIf is Working</div>
+    <ng-template #mainpart>ngIf If part is working here</ng-template><br>
+    <ng-template #elsepart>ngIf else part is working Here</ng-template><br>
+
+    <div [ngSwitch]="favColor">ngSwitch is
+        <div *ngSwitchCase="'red'"> {{favColor}}</div>
+        <div *ngSwitchCase="'green'"> {{favColor}}</div>
+        <div *ngSwitchCase="'blue'"> {{favColor}}</div>
+        <div *ngSwitchDefault="'black'">Default case is applied</div>
+    </div><br>
+
+    <div *ngFor="let col of colors">
+        {{col}}
+    </div><br>
+
+    <div *ngFor=" let bi of bio; index as i">
+        id is {{bi.id}} name is {{bi.name}} index is {{i}}
+    </div><br>
+
+    <div *ngFor=" let bi of bio; first as f; last as l">
+        {{f}} name is {{bi.name}} {{l}}
+    </div><br>
+
+
+    <app-registration>
+        <ng-container class="headingPart">
+            Heading Part
+        </ng-container>
+        <ng-container class="bodyPart">
+            Body Part
+        </ng-container>
+    </app-registration>
+    <br>
+</div>
+
+<h3>Template Driven Forms</h3>
+<app-simple-form></app-simple-form><br>
+
+<app-services></app-services><br><br>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<div class="container">
+<form action="">
+
+    <div class="form-group">
+        <label for="firstname"> FirstName </label>
+        <input required minlength="5" maxlength="20" pattern="AsadHabeeb" 
+        ngModel name="firstname" type="text" 
+        id="firstname" class="form-control" #fname = "ngModel" 
+        (click)="showValue(fname)" autocomplete="off">
+
+    <div class="alert alert-danger" *ngIf="!fname.valid && fname.touched">
+        <div *ngIf="fname.errors?.['required']">
+            Please Fill FirstName..
+        </div>
+        <div *ngIf="fname.errors?.['minlength']">
+            Minlength error..
+        </div>
+
+        <div *ngIf="fname.errors?.['maxlength']">
+            Maxlength error..
+        </div>
+        <div *ngIf="fname.errors?.['pattern']">
+            Pattern is not matching..
+        </div>
+    </div></div>
+
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input ngModel name="password" type="text" id="password" class="form-control" >
+    </div>
+
+    <div>
+        <input type="submit" name="submit" class="btn btn-success">
+    </div>
+</form>
+
+</div>
